@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Make Men Great Again</title>
+<meta name="description" content="The official brand statement of Make Men Great Again, and what wearing the shirt means.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a formal brand letter in a single editorial column, followed by the apparel collection
+   as a restrained product grid. Forest band carries the statement; warm white carries the shop. */
+:root{
+  --bg:#F7F5EF;
+  --fg:#17211C;
+  --forest:#254B3B;
+  --forest-deep:#1C3A2E;
+  --on-forest:#F7F5EF;
+  --accent:#A56A36;
+  --muted:#55615B;
+  --surface:#FDFCF8;
+  --line:rgba(23,33,28,.16);
+  --line-strong:rgba(23,33,28,.42);
+  --ok-bg:#E3EEE6;
+  --ok-fg:#1E4433;
+  --err:#8E2F22;
+  --display:"Bricolage Grotesque",system-ui,"Segoe UI",sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --ui:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --measure:64ch;
+  --gutter-l:max(16px,env(safe-area-inset-left,0px));
+  --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141A17;--fg:#EFEBE1;--forest:#2E6A52;--forest-deep:#1A2E26;--on-forest:#F3F0E8;
+    --accent:#C98F5B;--muted:#A6B0A9;--surface:#1B231F;--line:rgba(239,235,225,.16);
+    --line-strong:rgba(239,235,225,.45);--ok-bg:#1E3329;--ok-fg:#CFE7D8;--err:#F09A8C;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141A17;--fg:#EFEBE1;--forest:#2E6A52;--forest-deep:#1A2E26;--on-forest:#F3F0E8;
+  --accent:#C98F5B;--muted:#A6B0A9;--surface:#1B231F;--line:rgba(239,235,225,.16);
+  --line-strong:rgba(239,235,225,.45);--ok-bg:#1E3329;--ok-fg:#CFE7D8;--err:#F09A8C;color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+@media (min-width:48em){body{font-size:1.125rem}}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;letter-spacing:-.015em;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:2px}
+.wrap{max-width:68rem;margin-inline:auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.measure{max-width:var(--measure)}
+.stack{display:flex;flex-direction:column;gap:var(--gap,1rem)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.7rem 1.25rem;border-radius:4px;border:1.5px solid var(--forest);background:var(--forest);color:var(--on-forest);font-family:var(--ui);font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s}
+.btn:hover{background:var(--forest-deep);border-color:var(--forest-deep)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line-strong)}
+.btn.ghost:hover{background:var(--surface);border-color:var(--fg)}
+.btn.on-dark{background:var(--on-forest);color:var(--forest-deep);border-color:var(--on-forest)}
+
+/* header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px;padding-block:.5rem}
+.brand{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:.01em;text-transform:uppercase;text-decoration:none;line-height:1.1}
+.brand span{color:var(--forest)}
+.nav{display:flex;gap:.25rem;align-items:center}
+.nav a{font-family:var(--ui);font-size:.95rem;font-weight:500;text-decoration:none;padding:.6rem .75rem;min-height:44px;display:inline-flex;align-items:center;border-radius:4px}
+.nav a:hover{background:var(--surface)}
+@media (max-width:40em){.nav a:not(.btn){display:none}}
+
+/* bands */
+.band{padding-block:clamp(3rem,8vw,6rem)}
+.band + .band{border-top:1px solid var(--line)}
+.band.forest{background:var(--forest-deep);color:var(--on-forest);border-top:0}
+.band.forest + .band{border-top:0}
+.band.surface{background:var(--surface)}
+.kicker{font-family:var(--ui);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.forest .kicker{color:color-mix(in srgb,var(--on-forest) 72%,transparent)}
+.h-xl{font-size:clamp(2.5rem,7vw,5rem);font-weight:800;letter-spacing:-.03em;line-height:.98}
+.h-l{font-size:clamp(1.9rem,4vw,2.8rem)}
+.h-m{font-size:clamp(1.35rem,2.2vw,1.7rem)}
+.lede{font-size:clamp(1.15rem,1.5vw,1.3rem);line-height:1.5}
+.muted{color:var(--muted)}
+.forest .muted{color:color-mix(in srgb,var(--on-forest) 75%,transparent)}
+
+/* hero */
+.hero{padding-block:clamp(3.5rem,9vw,6.5rem) clamp(3rem,7vw,5rem)}
+.hero .descriptor{font-family:var(--ui);font-size:1rem;color:var(--muted);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.hero .descriptor::before{content:"";width:2.5rem;height:2px;background:var(--accent);flex:none}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:center;margin-top:2rem}
+
+/* statement (the formal letter) */
+.letter{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media (min-width:60em){.letter{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:4rem}}
+.letter-aside{border-left:3px solid var(--accent);padding-left:1.25rem;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 6rem)}
+.letter-aside .h-m{margin-bottom:.75rem}
+.letter-body{display:flex;flex-direction:column;gap:1.15rem;max-width:var(--measure)}
+.letter-body .sig{margin-top:1.5rem;font-family:var(--ui);font-size:.95rem;line-height:1.5}
+.letter-body .sig b{display:block;font-family:var(--display);font-size:1.2rem;font-weight:700}
+.forest .letter-body .sig b{color:var(--on-forest)}
+
+/* standards */
+.standards{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:0;grid-template-columns:1fr}
+@media (min-width:52em){.standards{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}}
+.standards li{padding-block:1.5rem;border-top:1px solid var(--line-strong);display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.standards .h-m{font-size:1.5rem}
+
+/* collection */
+.grid-products{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:1.5rem;grid-template-columns:1fr}
+@media (min-width:40em){.grid-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:64em){.grid-products{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.product{background:var(--surface);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.band.surface .product{background:var(--bg)}
+.swatch{aspect-ratio:4/5;max-width:100%;display:grid;place-items:center;padding:1.5rem;position:relative}
+.swatch .mark{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1;text-align:center;font-size:clamp(1.1rem,1.6vw,1.35rem)}
+.swatch .mark small{display:block;font-size:.55em;font-weight:700;letter-spacing:.14em;margin-top:.55em;opacity:.8}
+.swatch.ink{background:#1C3A2E;color:#F7F5EF}
+.swatch.chalk{background:#EDE8DC;color:#1C3A2E}
+.swatch.heather{background:#5E6A63;color:#F7F5EF}
+.swatch.rust{background:#8C5A32;color:#F7F5EF}
+.swatch .tag{position:absolute;top:.75rem;left:.75rem;font-family:var(--ui);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .55rem;border-radius:3px;background:rgba(0,0,0,.35);color:#F7F5EF}
+.swatch.chalk .tag{background:rgba(28,58,46,.9)}
+.product .body{padding:1.1rem 1.1rem 1.25rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.product h3{font-size:1.15rem}
+.product .spec{font-family:var(--ui);font-size:.88rem;color:var(--muted);line-height:1.5}
+.product .price{font-family:var(--display);font-weight:700;font-size:1.25rem;margin-top:auto;padding-top:.5rem;font-variant-numeric:tabular-nums}
+.product .btn{margin-top:.5rem;width:100%}
+.sizes{font-family:var(--ui);font-size:.85rem;color:var(--muted)}
+
+/* craft notes */
+.craft{display:grid;gap:2rem;grid-template-columns:1fr;margin-top:2rem}
+@media (min-width:52em){.craft{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}}
+.craft div{border-top:1px solid var(--line-strong);padding-top:1rem;display:flex;flex-direction:column;gap:.4rem;min-width:0}
+.craft h3{font-size:1.1rem}
+.craft p{font-size:1rem}
+
+/* list / order form */
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:clamp(1.25rem,3vw,2rem);display:flex;flex-direction:column;gap:1.1rem;min-width:0;max-width:34rem}
+.forest .form-card{background:color-mix(in srgb,var(--on-forest) 7%,transparent);border-color:color-mix(in srgb,var(--on-forest) 30%,transparent)}
+.field{display:flex;flex-direction:column;gap:.4rem;min-width:0}
+.field label{font-family:var(--ui);font-weight:600;font-size:.95rem}
+.field input,.field select{width:100%;min-height:48px;padding:.65rem .85rem;border:1.5px solid var(--line-strong);border-radius:4px;background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:1rem}
+.forest .field input,.forest .field select{background:color-mix(in srgb,var(--forest-deep) 70%,#000 0%);color:var(--on-forest);border-color:color-mix(in srgb,var(--on-forest) 45%,transparent)}
+.field input[aria-invalid="true"]{border-color:var(--err)}
+.field .error{font-family:var(--ui);font-size:.9rem;color:var(--err);font-weight:600}
+.field .error:empty{display:none}
+.promise{font-family:var(--ui);font-size:.9rem;color:var(--muted)}
+.forest .promise{color:color-mix(in srgb,var(--on-forest) 78%,transparent)}
+.status{border-radius:4px;padding:.9rem 1rem;font-family:var(--ui);font-size:.97rem;line-height:1.5;background:var(--ok-bg);color:var(--ok-fg)}
+.row2{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:36em){.row2{grid-template-columns:1fr 1fr}}
+
+/* faq */
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--line-strong);margin-top:1.5rem;max-width:48rem}
+.faq details{border-bottom:1px solid var(--line-strong)}
+.faq summary{list-style:none;cursor:pointer;padding:1.1rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-family:var(--display);font-weight:700;font-size:1.1rem;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:500;font-size:1.6rem;line-height:1;color:var(--forest);flex:none;width:1.5rem;text-align:center}
+.faq details[open] summary::after{content:"–"}
+.faq .answer{padding:0 0 1.25rem;max-width:var(--measure)}
+
+/* footer */
+.site-footer{border-top:1px solid var(--line-strong);padding-block:2.5rem 3rem;font-family:var(--ui);font-size:.95rem}
+.site-footer .grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:52em){.site-footer .grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}}
+.site-footer .small{color:var(--muted);font-size:.88rem;margin-top:1.5rem;max-width:var(--measure)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Make <span>Men</span> Great Again</a>
+    <nav class="nav" aria-label="Site">
+      <a href="#crisis">Why</a>
+      <a href="#statement">Statement</a>
+      <a href="#standards">Standards</a>
+      <a href="#founder">Founder</a>
+      <a class="btn" href="#contribute">Why wear it</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="band hero">
+    <div class="wrap">
+      <p class="descriptor">A shirt with a standard behind it, and a reason</p>
+      <h1 class="h-xl">Great means needed, present, and dependable.</h1>
+      <p class="lede measure" style="margin-top:1.5rem">Make Men Great Again is a statement worn by men who keep their word, carry their responsibilities, and show up for the people who count on them. The shirt is the reminder. The conduct is the point.</p>
+      <div class="actions">
+        <a class="btn" href="#statement">Read the brand statement</a>
+        <a class="btn ghost" href="#crisis">Why this exists</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="band" id="crisis">
+    <div class="wrap letter">
+      <aside class="letter-aside">
+        <p class="kicker">Why this exists</p>
+        <h2 class="h-m">America has a crisis on its hands, and it is mostly men.</h2>
+      </aside>
+      <div class="letter-body">
+        <p class="lede">Nearly four out of five people who die by suicide in the United States are men.</p>
+        <p>That is not a talking point. It is the CDC's count, year after year. Men are dying at roughly four times the rate of women, and the number has been climbing. Behind that figure is a pattern most of us have seen up close: a man who stopped reaching out, stopped being asked, and came to believe that nobody would notice if he was gone.</p>
+        <p>When a society tells men they are not needed, some men start to give up. This brand is a refusal to let that message stand. You are needed. The people around you need you present, not perfect. And the man next to you needs to hear it from someone who means it.</p>
+        <p>A shirt cannot fix a crisis. But it can start a conversation that no one else was going to start, and it can tell a man who is quietly struggling that he is not the only one holding the line.</p>
+        <p class="sig"><b>If you are in crisis right now</b>Call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline, U.S.) or contact local emergency services. That matters more than anything on this page.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band forest" id="statement">
+    <div class="wrap letter">
+      <aside class="letter-aside">
+        <p class="kicker">Brand statement</p>
+        <h2 class="h-m">A message from the founder on what this name means and why it is worth wearing.</h2>
+        <p class="muted" style="font-family:var(--ui);font-size:.95rem">Eddy Perez, Founder</p>
+        <p style="margin-top:1.25rem"><a class="btn on-dark" href="https://www.facebook.com/eddy.perez.543/videos/when-society-tells-men-they-arent-needed-men-start-giving-up-four-out-of-five-su/2904721629906518/" target="_blank" rel="noopener">Watch Eddy explain the name</a></p>
+      </aside>
+      <div class="letter-body">
+        <p class="lede">To the men who wear this, and to the people who stand beside them:</p>
+        <p>Make Men Great Again began as four words on a shirt. People stopped me to ask what it meant, and the question deserved a serious answer. This is that answer.</p>
+        <p>Many men today have been told, in direct and indirect ways, that they are not needed. When a man believes that, he begins to withdraw. He lets his standards slip, his commitments go quiet, and his relationships thin out. The cost is paid by his family, his colleagues, and his community, and most of all by him.</p>
+        <p>This brand exists to say the opposite, and to say it plainly. You are needed. The evidence is not in a slogan; it is in how you conduct yourself. A great man, as we use the word, is one who knows what matters most, keeps the promises nobody else is tracking, and stays in real contact with the people who rely on him. Greatness of that kind is quiet, consistent, and earned every week.</p>
+        <p>Our apparel is made to carry that standard into ordinary life. We chose heavyweight fabrics, durable construction, and a mark that is clear without being loud, because the garment should last as long as the commitment it represents. When you put it on, you are not announcing that you have arrived. You are reminding yourself of the work, and signalling to the men around you that they are not doing it alone.</p>
+        <p>This is not a political organization, a membership, or a counselling service. It is a standard, a founder's voice, and a line of clothing built to honor both. It is open to any man who wants to hold that standard, and to anyone who wants to support him.</p>
+        <p>Wear it with purpose. Then go keep your word.</p>
+        <p class="sig"><b>Eddy Perez</b>Founder, Make Men Great Again<br>Founder and CEO of EPM · Certified Mortgage Banker</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="standards">
+    <div class="wrap">
+      <p class="kicker">The standard</p>
+      <h2 class="h-l" style="margin-top:.5rem">Three commitments the mark represents.</h2>
+      <p class="measure" style="margin-top:1rem">The shirt carries a three-word promise. These are what the words refer to.</p>
+      <ul class="standards">
+        <li>
+          <h3 class="h-m">Purpose</h3>
+          <p>Know what matters most right now, and act on it before the week decides for you.</p>
+        </li>
+        <li>
+          <h3 class="h-m">Personal standards</h3>
+          <p>Keep the promises you make, beginning with the small ones nobody else is tracking.</p>
+        </li>
+        <li>
+          <h3 class="h-m">Connection</h3>
+          <p>Stay in real contact with the people who count on you, and let them count.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band surface" id="shirt">
+    <div class="wrap">
+      <p class="kicker">The shirt</p>
+      <h2 class="h-l" style="margin-top:.5rem">What you are wearing, and what it says.</h2>
+      <p class="measure" style="margin-top:1rem">The mark is simple: four words across the chest, with nothing else competing for attention. It is meant to be worn in ordinary life, on ordinary days, as a reminder to the man wearing it and a signal to the men around him.</p>
+      <div class="craft">
+        <div>
+          <h3>A reminder to yourself</h3>
+          <p>You are needed. The shirt does not say you have arrived; it says you are doing the work, and that it matters.</p>
+        </div>
+        <div>
+          <h3>A signal to other men</h3>
+          <p>When another man sees it, he knows he is not holding the standard alone. That is how a standard spreads.</p>
+        </div>
+        <div>
+          <h3>An open invitation</h3>
+          <p>People ask what it means. Every shirt is a chance to give the serious answer, in your own words.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band forest" id="contribute">
+    <div class="wrap letter">
+      <aside class="letter-aside">
+        <p class="kicker">What you are part of</p>
+        <h2 class="h-m">Wearing it is a contribution, not a purchase.</h2>
+      </aside>
+      <div class="letter-body">
+        <p class="lede">Every shirt puts the message in one more place it needs to be seen.</p>
+        <p>This started as four words that made people stop and ask. The more men who wear it, the more that conversation happens: at the gym, at the job site, at the school pickup, across the dinner table. You are not buying into a brand. You are carrying a message to the people in your life who need to hear that men are needed.</p>
+        <p>You are also joining a standard. Purpose, personal standards, connection. Men who wear this are expected to hold them, and to help the men next to them hold them too. That is the contribution that counts, and the shirt is how you say you are in.</p>
+        <p class="sig"><b>Want one?</b>Shirts are $30 and hoodies are $60, supplied directly by us. Call or text Tripp, who manages the website, local sales, and local supply, at <a href="tel:+17708152775">(770) 815-2775</a> with your size and we will get you sorted with the current run.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="founder">
+    <div class="wrap" style="display:grid;gap:2rem;grid-template-columns:1fr">
+      <div class="measure stack">
+        <p class="kicker">Who stands behind it</p>
+        <h2 class="h-l">Eddy Perez</h2>
+        <p>Eddy Perez is the founder and CEO of EPM, a mortgage company, and holds the Certified Mortgage Banker designation. He built that company the way he believes a man builds a life: by keeping commitments to the people who depend on him.</p>
+        <p>Make Men Great Again is his own brand, independent of EPM. He is not a counsellor and does not present himself as one. He speaks as a founder and as a man working on the same standards he asks others to hold.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What does the name mean?</summary>
+          <p class="answer">It is a reminder that men are needed, and a call to conduct themselves accordingly: know what matters, keep your commitments, and show up for the people who count on you.</p>
+        </details>
+        <details>
+          <summary>Is this political?</summary>
+          <p class="answer">No. The brand takes no political position and is not affiliated with any party, campaign, or organization. It is open to any man who wants to hold the standard, and to anyone who supports him.</p>
+        </details>
+        <details>
+          <summary>How do I get a shirt?</summary>
+          <p class="answer">Directly from us. Shirts are $30 and hoodies are $60. Call or text Tripp at <a href="tel:+17708152775">(770) 815-2775</a> with your size and we will take care of the rest; we supply the product ourselves, in limited runs.</p>
+        </details>
+        <details>
+          <summary>Is this a support group or a mental health service?</summary>
+          <p class="answer">No. We are a brand and a message, not a clinical service. If you are in crisis or thinking about harming yourself, call or text 988 in the U.S., or contact local emergency services, right away.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="brand" href="#top">Make <span>Men</span> Great Again</a>
+        <p class="small">A standard, a founder's voice, and a shirt built to honor both. Independent of EPM.</p>
+      </div>
+      <div>
+        <p style="font-weight:600;margin-bottom:.4rem">Orders and local supply</p>
+        <p>Tripp — manager, website, local sales and supply<br><a href="tel:+17708152775">(770) 815-2775</a></p>
+        <p style="font-weight:600;margin:1.25rem 0 .4rem">Site</p>
+        <p><a href="#crisis">Why this exists</a> · <a href="#statement">Brand statement</a> · <a href="#standards">Standards</a> · <a href="#contribute">Why wear it</a> · <a href="#founder">Founder</a></p>
+      </div>
+    </div>
+    <p class="small">© 2026 Make Men Great Again. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
